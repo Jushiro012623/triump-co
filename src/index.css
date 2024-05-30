@@ -8,7 +8,6 @@
   --clr-bg-second: #f7f7f7;
   --delay: .3s:
 }
-
 *{ /* global */
   margin: 0;
   padding: 0;
@@ -17,7 +16,13 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body{
+  min-height: 100%;
   font-family: "Poppins", sans-serif;
   background-color: var(--clr-bg-light);
   color: var(--clr-fmain);
+}
+.App{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

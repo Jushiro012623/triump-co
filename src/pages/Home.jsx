@@ -2,16 +2,17 @@ import React from 'react'
 import Carousel from '../components/Carousel'
 import discount from '../image/yspod/discount.jpg'
 
-import top from '../image/yspod/red.jpg'
-import top1 from '../image/yspod/3.jpg'
-import top2 from '../image/yspod/10.jpg'
-import top3 from '../image/yspod/redStripes.jpg'
+import top from '../image/yspod/16.jpg'
+import top1 from '../image/yspod/17.jpg'
+import top2 from '../image/yspod/13.jpg'
+import top3 from '../image/yspod/6.jpg'
 
+import caru from '../image/yspod/caru.jpg'
 export default function Home() {
   const image = [
-    {img:top},
-    {img:top1},
-    {img:top2},
+    {img:caru},
+    {img:caru},
+    {img:caru}
   ]
   const arrival = [
     {img:top, type:"Men's"},
@@ -26,7 +27,6 @@ export default function Home() {
           <img src={discount} alt="" />
           <h5>buy 2, get</h5>
           <h1>10% OFF</h1>
-          <h5>on crop tops</h5>
         </div>
         
         <div className="new-arrival">

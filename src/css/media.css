@@ -1,0 +1,86 @@
+@media only screen and (min-width:480px){
+
+
+}
+@media only screen and (min-width:600px){
+
+    .home .new-arrival .new-arrival-container .new-arrival-img{
+        height: 280px;
+    }
+    .home .discount{
+        height: 140px;
+    }
+    .home .discount h1{
+        
+        font-size: 40px;
+    }
+    .home .discount h5{
+        
+        font-size: 20px;
+    }
+    .login-create .form-wrapper > *{
+        width: 350px;
+    }
+
+}
+@media only screen and (min-width:700px){
+    
+    .home .new-arrival .new-arrival-container .new-arrival-img{
+        height: 300px;
+    }
+}
+@media only screen and (min-width:800px){
+    
+    .home .discount{
+        height: 160px;
+    }
+    .home .new-arrival .new-arrival-container .new-arrival-img{
+        height: 350px;
+    }
+    .login-create .form-wrapper > *{
+        width: 400px;
+    }
+}
+@media only screen and (min-width:1024px){
+    
+    .home .discount{
+        height: 180px;
+    }
+    .home .new-arrival .new-arrival-container .new-arrival-img{
+        height: 250px;
+    }
+    .home .discount h1{
+        
+        font-size: 60px;
+    }
+    .home .discount h5{
+        
+        font-size: 25px;
+    }
+    .login-create{
+        
+     padding-top: 150px;
+    }
+    .login-create .form-wrapper div input,
+    .login-area,
+    .create-area,
+    .cancel-area,
+    .signup-area {
+        height: 40px;
+    }
+}
+@media only screen and (min-width:1280px){
+    
+    .home .discount{
+        height: 200px;
+    }
+    .home .new-arrival .new-arrival-container .new-arrival-img{
+        height: 300px;
+    }
+}
+@media only screen and (min-width:1920px){
+    
+    .home .new-arrival .new-arrival-container .new-arrival-img{
+        height: 350px;
+    }
+}
