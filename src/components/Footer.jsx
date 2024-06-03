@@ -2,14 +2,14 @@ import React from 'react'
 import tc from '../image/TC.png'
 
 import { CiPhone,CiMail  } from "react-icons/ci";
+
 function Footer() {
   return (
     <div className='footer'>
        <div className="wrapper">
-        <div className="connect">
+            <div className="connect">
                 <div className="logo">
                     <img src={tc} alt="" />
-
                 </div>
                 <div className='connect-info'>
                     <p>connect</p>
@@ -23,7 +23,6 @@ function Footer() {
 
                     </ul>
                 </div>
-                
             </div>
             <div className="social">
                 <ul>

@@ -6,12 +6,16 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Home from './pages/Home';
 import Login from './pages/Login';
+import axios from 'axios';
 import Signup from './pages/Signup';
 function App() {
+  axios.defaults.withCredentials = true;
+
   return (
     
     <Router>
     <div className="App">
+      
       <Nav />
       <Routes>
         <Route exact path="/" element={<Home />} />

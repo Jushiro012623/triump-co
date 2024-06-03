@@ -1,9 +1,14 @@
 @media only screen and (min-width:480px){
 
+    .login-create .form-wrapper > *{
+        width: 350px;
+    }
 
 }
 @media only screen and (min-width:600px){
-
+    .navbar{
+        height: 100px;
+    }
     .home .new-arrival .new-arrival-container .new-arrival-img{
         height: 280px;
     }
@@ -18,9 +23,6 @@
         
         font-size: 20px;
     }
-    .login-create .form-wrapper > *{
-        width: 350px;
-    }
 
 }
 @media only screen and (min-width:700px){
@@ -31,8 +33,14 @@
 }
 @media only screen and (min-width:800px){
     
-    .home .discount{
-        height: 160px;
+    .nav-menu{
+        width: 350px;
+    }
+    .nav-menu h2{
+        margin-bottom: 2em;
+    }
+    .nav-menu ul li:last-child{
+        gap: 1.5em;
     }
     .home .new-arrival .new-arrival-container .new-arrival-img{
         height: 350px;
@@ -40,9 +48,30 @@
     .login-create .form-wrapper > *{
         width: 400px;
     }
-}
-@media only screen and (min-width:1024px){
+    .login-create{
+        border-radius: 20px;
+        width: 500px;
+        padding: 50px 0;
+        box-shadow: 1px 1px 5px 1px rgba(128, 128, 128, .5);
+    }
+    .footer .connect{
+        width: 100%;
+    }
     
+}
+
+@media only screen and (min-width:1024px){
+    .navbar{
+        height: 120px;
+        padding: 0 3em 0 3em;
+    }
+    .navbar ul{
+        gap: 1em;
+    }
+    .navbar .img{
+        width: 90px;
+        height: 90px;
+    }
     .home .discount{
         height: 180px;
     }
@@ -57,17 +86,14 @@
         
         font-size: 25px;
     }
-    .login-create{
-        
-     padding-top: 150px;
-    }
-    .login-create .form-wrapper div input,
+    
+    /* .login-create .form-wrapper div input,
     .login-area,
     .create-area,
     .cancel-area,
     .signup-area {
         height: 40px;
-    }
+    } */
 }
 @media only screen and (min-width:1280px){
     

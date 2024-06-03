@@ -9,17 +9,30 @@ import top3 from '../image/yspod/6.jpg'
 
 import caru from '../image/yspod/caru.jpg'
 export default function Home() {
-  const image = [
-    {img:caru},
-    {img:caru},
-    {img:caru}
-  ]
-  const arrival = [
-    {img:top, type:"Men's"},
-    {img:top1, type:"Women's"},
-    {img:top2, type:"Kid's"},
-    {img:top3, type:"Tops"},
-  ]
+    const image = [
+      {img:caru},
+      {img:caru},
+      {img:caru}
+    ]
+    const arrival = [
+      {
+        img:top, 
+        type:"Men's"
+      },
+      {
+        img:top1, 
+        type:"Women's"
+      },
+      {
+        img:top2, 
+        type:"Kid's"
+      },
+      {
+        img:top3, 
+        type:"Tops"
+      },
+    ]
+    
   return (
     <div className='home'>
         <Carousel image={image}/>
@@ -28,20 +41,22 @@ export default function Home() {
           <h5>buy 2, get</h5>
           <h1>10% OFF</h1>
         </div>
-        
         <div className="new-arrival">
           <h2>new arrivals</h2>
           <div className="new-arrival-container">
             {arrival.map((newArrival, index) => (
-              <div className='info'>
-              <div className="new-arrival-img">
-                  <img key={index} src={newArrival.img} alt="" />
-              </div>
-              <p>{newArrival.type}</p>
-              </div>
+              <React.Fragment key={index}>
+                <div className='info'>
+                <div className="new-arrival-img">
+                    <img src={newArrival.img} alt="" />
+                </div>
+                <p>{newArrival.type}</p>
+                </div>
+              </React.Fragment>
             ))}
           </div>
         </div>
+
     </div>
   )
 }

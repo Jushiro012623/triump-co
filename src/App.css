@@ -7,13 +7,13 @@
     top: 0;
 }
 .navbar{
-    background-color: var(--clr-bg-second);
+    background-color: var(--clr-bg-main);
     width: 100%;
     height: 90px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 1.4em 0 3em;
+    padding: 0 1.4em 0 1.4em;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -25,6 +25,19 @@
 .navbar .img img{
     max-width: 100%;
     cursor: pointer;
+}
+.navbar .img a{
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   font-size: 1.5em;
+   color: var(--clr-tmain);
+   font-weight: 600;
+   gap: .5em;
+}
+.navbar .img a span{
+    white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .navbar ul{
@@ -46,13 +59,15 @@
 .search-nav{
     font-size: 1rem;
     width: 100%;
-    padding: 1em;
+    padding: .5em 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2em;
-    background-color: var(--clr-bg-second);
+    /* gap: 1em; */
+    background-color: rgba(255, 255, 255, 1);
     animation: searchShow .3s ease-in-out ;
+    border-top: 2px  var(--clr-bg-second) solid;
+    /* backdrop-filter:  blur(10px); */
 }
 
 .search-nav input{
@@ -60,21 +75,36 @@
     width: 60%;
     border: none;
     outline: none;
+    height: 35px;
+    padding-left: 2em;
+    /* background-color: var(--clr-bg-second); */
+    border-radius: 5px;
 }
 .search-nav svg{
     font-size: 25px;
     cursor: pointer;
+    /* flex-grow: 1; */
 }
 
 .nav-menu{
-    width: 70%;
-    background-color: var(--clr-bg-second);
+    width: 300px;
+    background-color: var(--clr-bg-main);
     position: absolute;
     right: 0;
     height: 100vh;
+    overflow-y: scroll;
     text-transform: uppercase;
     padding: 1em 2em 0 1.5em;
     animation: menuShow .3s ease-in-out ;
+}
+.nav-menu::-webkit-scrollbar{
+    width: 5px;
+    height: 8px;
+    background-color: transparent;
+}
+.nav-menu::-webkit-scrollbar-thumb{
+    background-color: #cccccc;
+    border-radius: 10px;
 }
 .nav-menu h2{
     margin-bottom: 1.5em;
@@ -108,6 +138,7 @@
     display: flex;
     gap: 1em;
     font-size: 25px;
+    margin-bottom: 150px;
 }
 @keyframes searchShow {
     from{
@@ -147,21 +178,12 @@
     align-items: center;
     position: relative;
 }
-/* .footer .connect::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    background-color: aqua;
-    height: 1px;
-    bottom: 0;
-} */
 .footer .logo{
     width: 80px;
     height: 80px;
 }
 .footer .wrapper{
-    width: 400px;
+    width: clamp(400px, 400px, 600px);
 }
 .footer .logo img{
     max-width: 100%;
@@ -324,11 +346,14 @@
 }
 
 .login-create{
-    padding-top: 120px;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     margin-bottom: 100px;
     /* min-height: 100vh; */
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .login-create h1{
     text-align: center;
@@ -338,7 +363,7 @@
 .login-create .form-wrapper{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
     align-items: center;
 }
@@ -347,11 +372,14 @@
     text-decoration: none;
     color: var(--clr-tmain);
 }
-.login-create .form-wrapper label {
+.login-create .form-wrapper span {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
+}
+.login-create .form-wrapper div{
+    position: relative;
 }
 .login-create .form-wrapper div, button{
     margin-bottom: 2em;
@@ -364,11 +392,18 @@
     height: 48px;
     outline: none;
     border: 1px var(--clr-tmain) solid;
-    background: none;
+    background: transparent;
     color: var(--clr-tmain);
     border-radius: 0;
     width: 100%;
     padding-left: 1em;
+}
+
+.login-area,
+.create-area,
+.cancel-area,
+.signup-area {
+    padding: 0;
 }
 .login-create .form-wrapper .forgot-area{
     text-align: end;
@@ -389,13 +424,17 @@
 .create-area,
 .signup-area,
 .cancel-area{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 15px;
+    cursor: pointer;
     font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    transition: letter-spacing .2s linear;
 }
 
 .login-create .form-wrapper .login-area,
@@ -405,6 +444,12 @@
 }
 .pass-area{
     position: relative;
+}
+.pass-area .pass-error{
+    left: 0;
+    bottom: 0;
+    transform: translateY(50%); 
+    text-transform: none !important;
 }
 .pass-area svg{
     position: absolute;
@@ -418,78 +463,24 @@
 .pass-area input:valid + svg{
     display: flex;
 }
-/* 
-.login .login-wrapper > input, .login-area, .create-area,
-.login-wrapper .password-area input {
-    height: 48px;
-    outline: none;
-    border: 1px var(--clr-tmain) solid;
-    background: none;
-    margin-bottom: 2em;
-    color: var(--clr-tmain);
-    border-radius: 0;
-}
-.login .login-wrapper input{
-    padding-left: 14px;
-}
-.login .login-wrapper input:last-of-type{
-    position: relative;
-}
-.login-wrapper label, 
-.login-area,
-.create-area{
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-}
-
-.login-area,
-.create-area{
-    color: var(--clr-tmain);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-area{
-    background-color: var(--clr-tmain);
-    color: var(--clr-bg-main);
-}
-.login-wrapper button:last-of-type a{
-    background-color: aqua;
-    width: 100%;
-}
-.login-wrapper .forgot-area{
-    text-decoration: none;
-    color: var(--clr-tmain);
-    font-size: 14px;
-    text-align: end;
-    text-transform: capitalize;
-}
-.login-wrapper .password-area{
-    position: relative;
-    margin-bottom: 2em;
-}
-
-.login-wrapper .password-area input{
-    width: 100%;
-    margin-bottom: 0;
-}
-.login-wrapper .password-area svg{
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    transform: translateY(-50%);
+.success-loading{
     font-size: 20px;
-    height: 100%;
-    display: none;
+    animation: loading 1s linear infinite;
 }
-.login-wrapper .password-area input:focus + svg,
-    .login-wrapper .password-area input:valid + svg{
-    display: flex;
+.invalid{
+    color: red;
+    font-size: 14px ;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    
 }
-.login-wrapper button:first-of-type{
-    background-color: var(--clr-tmain);
-    color: var(--clr-bg-main);
-} */
+@keyframes loading {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
