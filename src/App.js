@@ -8,6 +8,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import axios from 'axios';
 import Signup from './pages/Signup';
+import Account from './pages/Account';
+import Password from './components/Password';
+
 function App() {
   axios.defaults.withCredentials = true;
 
@@ -21,6 +24,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Account />} />
       </Routes>
       <Footer />
     </div>

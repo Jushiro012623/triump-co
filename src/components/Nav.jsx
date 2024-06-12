@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
-import { CiSearch, CiShoppingCart, CiUser, CiMenuFries } from "react-icons/ci";
+import { CiSearch, CiShoppingCart, CiUser, CiMenuFries,CiBellOn  } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 import { FaTiktok, FaFacebook, FaInstagram } from "react-icons/fa";
 import tc from '../image/TC.png';
@@ -11,9 +11,7 @@ export default function Nav() {
     const [Search, setSearch] = useState(false);
     const [Menu, setMenu] = useState(false);
     const navRef = useRef(null);
-    const [name, setName] = useState();
     const [isLogin ,setIsLogin] = useState(false);
-    const navigate =useNavigate();
 
     const handleLogout = () => {
       // axios.post('http://localhost:8800/logout')
@@ -24,23 +22,21 @@ export default function Nav() {
       //   })
       //   .catch(err => console.error('Logout failed:', err));
     };
-
     useEffect (() => {
       axios.get('http://localhost:8800')
       .then(res => {
         console.log(res.data);
         if (res.data.valid){
-          setIsLogin(true);
-          setName(res.data.user_name);  
+          setIsLogin(true);  
         }
         else{
-          navigate('/login')
+          setIsLogin(false)
         }
         console.log(res)
       })
       .catch(err => console.log(err))
     }, [])
-
+  
     const ShowMenu = () =>{
       setMenu(!Menu);
       setSearch(false);
@@ -76,7 +72,6 @@ export default function Nav() {
         <div className='img'>
           <Link to='/'>
             <img src={tc} alt="" onClick={Close} />
-            <span>{name}</span>
           </Link>
         </div>
         <ul>
@@ -90,9 +85,14 @@ export default function Nav() {
                 <CiShoppingCart/>
             </Link>
           </li>
+          <li className='links' onClick={()=>{setMenu(false)}}>
+            <Link to='/profile'>
+                <CiUser/>
+            </Link>
+          </li>
           <li className='links'>
             <Link>
-                <CiUser/>
+                <CiBellOn/>
             </Link>
           </li>
           <li className='links' onClick={ShowMenu}>

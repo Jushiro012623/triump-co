@@ -6,9 +6,11 @@ import top from '../image/yspod/16.jpg'
 import top1 from '../image/yspod/17.jpg'
 import top2 from '../image/yspod/13.jpg'
 import top3 from '../image/yspod/6.jpg'
-
+import axios from 'axios'
 import caru from '../image/yspod/caru.jpg'
+
 export default function Home() {
+  axios.defaults.withCredentials = true;
     const image = [
       {img:caru},
       {img:caru},

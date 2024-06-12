@@ -14,7 +14,7 @@ function Login() {
   const [email, setEmail] = useState();
   const [user_name, setUserName] = useState();
   const emailRef = useRef(null);
-  const [success, setSuceess] = useState()
+  const [success, setSuceess] = useState(false)
 
 
   const handlePassword = () => {
@@ -26,9 +26,9 @@ function Login() {
     axios.post('http://localhost:8800/user_info', {email, user_name, user_pass})
     .then(res => {
       setForgot(false);
-      setSuceess(!success)
+      setSuceess(true)
         setTimeout(() => {
-            navigate('/');
+            navigate('/profile');
         }, 1000);
     })
     .catch(err => {

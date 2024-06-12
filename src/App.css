@@ -67,6 +67,7 @@
     background-color: rgba(255, 255, 255, 1);
     animation: searchShow .3s ease-in-out ;
     border-top: 2px  var(--clr-bg-second) solid;
+    border-bottom: 2px  var(--clr-bg-second) solid;
     /* backdrop-filter:  blur(10px); */
 }
 
@@ -353,7 +354,6 @@
     /* min-height: 100vh; */
     margin-left: auto;
     margin-right: auto;
-
 }
 .login-create h1{
     text-align: center;
@@ -483,4 +483,305 @@
     to{
         transform: rotate(360deg);
     }
+}
+.left{
+    padding-top: 100px;
+    width: 100%;;
+    padding-bottom: 1em ;
+    position: relative;
+}
+.profile-area{
+    width: 100%;
+    background-color: var(--clr-bg-second);
+    height: auto;
+    padding: 2em 0 .5em 0;
+}
+.profile-area .profile{
+    margin: auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.profile-area .profile img{
+    object-fit: cover;
+    max-width: 100%;
+    object-position: center;
+}
+.profile-area p{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+.profile-area .name{
+    font-size: 15px;
+    margin-top: 0px;
+    text-transform: capitalize;
+}
+.profile-area .edit{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    gap: .5em;
+}
+.profile-area .edit button{
+    background-color: transparent;
+    text-transform: capitalize;
+    height: 35px;
+    width: 100px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0;
+}
+.profile-area .edit .settings{
+    font-size: 25px;
+    cursor: pointer;
+}
+.nav_area{
+    border-top: 5px solid var(--clr-bg-second) ;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.nav_area li{
+    padding: 1em 1.5em 1em 1em;
+    list-style: none;
+    text-decoration: none;
+    color: var(--clr-tmain);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.nav_area li .arrow{
+    margin-left: auto;
+    font-size: 30px;
+    transition: transform .2s linear;
+}
+.orders{
+    width: 100%;
+    min-height: 30vh;
+    animation: profileAnim .3s linear forwards;
+}
+@keyframes profileAnim {
+    from{
+        opacity: 0;
+        transform: translateY(0%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.orders .order_det{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    gap: 10px;
+    min-height: 100px;
+    align-items: center;
+    padding: 1em 0;
+    position: relative;
+}
+.orders .order_det .order_img{
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+}
+.orders .order_det .order_img img{
+    max-width: 100%;
+}
+.orders .order_det .product_info{
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+.orders .order_det .product_info .product span{
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+}
+.orders .order_det .product_info .product p{
+    font-size: 12px;
+}
+.orders .order_det .product_info .date-status{
+    display: flex;
+    gap: 50px;
+}
+.orders .order_det .product_info .date-status h1{
+    font-size: 12px;
+    text-transform: capitalize;
+    position: relative;
+    font-weight: 600;
+    flex-grow: 1;
+}
+.orders .amount{
+    text-transform: capitalize;
+    text-align: end;
+    font-size: 12px;
+    font-weight: 600;
+    width: 90%;
+    margin: auto;
+    margin-top: 2em;
+}
+.orders  p.note{
+    font-size: 10px;
+    width: 90%;
+    margin: auto;
+    font-style: italic;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.date-status h1::after{
+    content: attr(attr);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-90%);
+    font-size: 10px;
+    white-space: nowrap;
+    font-weight: 300;
+}
+
+.form{
+    animation: profileAnim .3s linear forwards;
+    width: 100%;
+    padding-top: 1em;  
+    border-bottom: 5px solid var(--clr-bg-second) ;
+    min-height: 30vh;
+}
+.form form{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.form span{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.form input{
+    height: 45px;
+    outline: none;
+    border: 1px var(--clr-tmain) solid;
+    background: transparent;
+    color: var(--clr-tmain);
+    border-radius: 0;
+    width: 100%;
+    padding: 0 1em;
+    margin-bottom: 1.5em;
+}
+.form p{
+    font-size: 12px;
+    font-style: italic;
+    margin: 1em 0;
+}
+.form button{
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    background-color: var(--clr-tmain);
+    color: var(--clr-bg-main);
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.modal-open {
+    overflow: hidden;
+  }
+.modal-container{
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 9999;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.modal_profile{
+    width: 90%;
+    background-color: var(--clr-bg-main);
+    overflow: hidden;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    transform: translate(-50%, -50%);
+}
+.modal_profile h4{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 500;
+    padding: .5em 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+
+}
+.modal_profile .picture{
+    margin: 1em auto 0 auto;
+    width: 90%;
+
+}
+.modal_profile .picture .profile{
+    width: 100px;
+    position: relative;
+    height: 100px;
+    margin: auto;
+}
+.modal_profile .profile img{
+    max-width: 100%;
+    clip-path: circle();
+}
+.modal_profile .profile .edit_icon{
+    position: absolute;
+    background-color: var(--clr-bg-main);
+    font-size: 20px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    cursor: pointer;
+    right: 0;
+}
+.modal_profile .info{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    width: 90%;
+    margin: 1em auto 0 auto;
+
+}
+.modal_profile .info input {
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--clr-tmain);
+    padding-left: .5em;
+}
+.modal_profile .info p{
+    font-size: 10px;
+    margin-top: .5em;
 }

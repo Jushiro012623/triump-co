@@ -57,7 +57,7 @@ export default function Signup() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8800/dbtc', values)
+        axios.post('http://localhost:8800/dbtc', {...values, source: 'signup'})
             .then(res => {
                 if (res.data && !res.data.error) {
                     setSuceess(true)
@@ -150,7 +150,7 @@ export default function Signup() {
                         </div>
                     </React.Fragment>
                 ))}
-                <button type='submit' className='signup-area'>
+                <button type='submit' className='signup-area' disabled={success}>
                     {success ? <AiOutlineLoading className='success-loading'/> : "sign up"}
                 </button>
                 <Link to='/login' className='cancel-area'>login</Link>
